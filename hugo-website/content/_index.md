@@ -30,3 +30,6 @@ Graphs](https://dash.harvard.edu/bitstream/handle/1/14398532/MAKELOV-SENIORTHESI
 *A. Makelov* \
 Undergraduate Thesis, Harvard College 2015
 
+## Blog
+
+[Mandala: turning Python function calls into persistent, structured data (draft)](blog/pl/)
