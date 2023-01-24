@@ -73,7 +73,7 @@ still having intermediate results cached (and even <a href=#pattern-matching-que
 queriable</a>). The video below shows this in action by
 incrementally evolving the workflow above with new logic and parameters:</p><p><details open><summary markdown=span>Show/hide video</summary>
 <video width=100% controls>
-<source src=https://user-images.githubusercontent.com/1467702/213727888-bcb54178-f762-42ce-b58d-ceac0bef0887.mp4 type=video/mp4><source src=https://user-images.githubusercontent.com/1467702/214250385-b725d2ee-6c2d-46de-87de-bdbb905c976a.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The video above illustrates</p><ul><li><strong>memoization as imperative query interface</strong>: you can get to any of the
+<source src=https://user-images.githubusercontent.com/1467702/214254080-ada807f7-40da-4dac-803b-ff6686d37174.mp4 type=video/mp4><source src=https://user-images.githubusercontent.com/1467702/214250385-b725d2ee-6c2d-46de-87de-bdbb905c976a.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The video above illustrates</p><ul><li><strong>memoization as imperative query interface</strong>: you can get to any of the
 computed quantities just by executing this code, or parts of it, again.</li><li><strong>laziness</strong>: when run against a persistent storage, <code>mandala</code> avoids
 loading things from it when no new computations are being done (hence the
 objects with <code>in_memory=False</code>).</li><li><strong>control flow</strong>: laziness is designed to do the least work required by
