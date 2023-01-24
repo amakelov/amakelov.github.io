@@ -1,3 +1,4 @@
+/* align text in the body left */
 body {
-    text-align: justify;
+    text-align: left;
 }
