@@ -1,4 +1,5 @@
 baseURL = "https://amakelov.github.io"
+# baseURL = "localhost:1313/"
 languageCode = 'en-us'
 title = "Alex Makelov"
 paginate = 5

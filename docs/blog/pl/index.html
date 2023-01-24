@@ -73,7 +73,7 @@ still having intermediate results cached (and even <a href=#pattern-matching-que
 queriable</a>). The video below shows this in action by
 incrementally evolving the workflow above with new logic and parameters:</p><p><details open><summary markdown=span>Show/hide video</summary>
 <video width=100% controls>
-<source src=https://user-images.githubusercontent.com/1467702/214254080-ada807f7-40da-4dac-803b-ff6686d37174.mp4 type=video/mp4><source src=https://user-images.githubusercontent.com/1467702/214250385-b725d2ee-6c2d-46de-87de-bdbb905c976a.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The video above illustrates</p><ul><li><strong>memoization as imperative query interface</strong>: you can get to any of the
+<source src=../../videos/interactive_memoization.mp4 type=video/mp4><source src=../../videos/interactive_memoization.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The video above illustrates</p><ul><li><strong>memoization as imperative query interface</strong>: you can get to any of the
 computed quantities just by executing this code, or parts of it, again.</li><li><strong>laziness</strong>: when run against a persistent storage, <code>mandala</code> avoids
 loading things from it when no new computations are being done (hence the
 objects with <code>in_memory=False</code>).</li><li><strong>control flow</strong>: laziness is designed to do the least work required by
@@ -91,7 +91,7 @@ time there is a large number of calls happening, they share some repetitive
 structure that can be abstracted away. This way you can take &ldquo;shortcuts&rdquo; in the
 memoization graph:</p><p><details open><summary markdown=span>Show/hide video</summary>
 <video width=100% controls>
-<source src=https://user-images.githubusercontent.com/1467702/213748581-d6d97ac7-5dc8-4f38-979e-eb3f4898d30f.mp4 type=video/mp4><source src=https://user-images.githubusercontent.com/1467702/214250726-a5f2ee62-25bd-43b0-9e49-dc96934096cf.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The <code>@superop</code> decorator you see in the video is needed to indicate that a
+<source src=../../videos/sup.mp4 type=video/mp4><source src=../../videos/sup.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The <code>@superop</code> decorator you see in the video is needed to indicate that a
 memoized function is itself a composition of memoized functions. A few of the
 nice things enabled by this:</p><ul><li><strong>shortcutting memoization</strong>: the first time when you run the refactored
 workflow, execution goes inside the body of <code>train_forest</code> and loops over all
@@ -186,9 +186,9 @@ them from the new ones.</p><p>In <code>mandala</code>, you can do this by adding
 and it JustWorks™. A column is added to the current memoization table, with the
 default value applied retroactively to past calls. All the memoized calls
 without the new argument are still memoized. See below for how to expose a new
-hyperparameter to the pipeline, and add it to the declarative query as well:</p><p><details open><summary markdown=span>Show/hide video</summary>
+hyperparameter to the pipeline, and add it to the declarative query as well:</p><p><img loading=lazy src=../../videos/add_arg.mp4 alt></p><p><details open><summary markdown=span>Show/hide video</summary>
 <video width=100% controls>
-<source src=https://user-images.githubusercontent.com/1467702/214083767-e9f99608-0492-4ea8-a22d-233dbcc3b182.mp4 type=video/mp4><source src=https://user-images.githubusercontent.com/1467702/214250892-787057c5-a8d2-4860-a49d-f5ea1391e9ce.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><h3 id=function-level-dependency-tracking>Function-level dependency tracking<a hidden class=anchor aria-hidden=true href=#function-level-dependency-tracking>#</a></h3><p>The harder problem is detecting when a function&rsquo;s dependencies have changed,
+<source src=../../videos/add_arg.mp4 type=video/mp4><source src=../../videos/add_arg.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><h3 id=function-level-dependency-tracking>Function-level dependency tracking<a hidden class=anchor aria-hidden=true href=#function-level-dependency-tracking>#</a></h3><p>The harder problem is detecting when a function&rsquo;s dependencies have changed,
 potentially rendering the memoized results out of sync with the new
 codebase. Since we&rsquo;re basing everything on memoization, a purely <code>git</code>-style
 versioning model is too coarse-grained to work: a change in the logic of one
@@ -205,7 +205,7 @@ this change, and asked whether this change should be ignored (so old results are
 kept) or new versions of the memoized functions should be created (in which case
 old calls would be recomputed against the new codebase):</p><p><details open><summary markdown=span>Show/hide video</summary>
 <video width=100% controls>
-<source src=https://user-images.githubusercontent.com/1467702/214089729-79b7e9b7-761b-4e45-a23a-580ce80a7e6d.mp4 type=video/mp4><source src=https://user-images.githubusercontent.com/1467702/214250996-b2c4eb7d-45ea-414b-abeb-ff51c77d5740.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>This feature is still actively being designed, and there are many corner cases
+<source src=../../videos/deps.mp4 type=video/mp4><source src=../../videos/deps.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>This feature is still actively being designed, and there are many corner cases
 in which it (loudly) fails. However, when used properly, it gives you the best
 of both worlds: a tidy, comprehensible storage, and the ability to refactor code
 while retaining its connection to stored results.</p><h2 id=conclusion-and-next-up>Conclusion, and next up<a hidden class=anchor aria-hidden=true href=#conclusion-and-next-up>#</a></h2><p>This was a rather brisk walk through <code>mandala</code>, but you&rsquo;ve hopefully come away
