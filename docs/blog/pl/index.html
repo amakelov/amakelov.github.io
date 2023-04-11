@@ -13,7 +13,7 @@ detecting when a change in the code may require recomputation.</li></ul><p>This 
 to efficient reuse of computations, clear code, fewer bugs, easier
 reproducibility, and improved developer productivity. The project is still in
 active development, and not optimized for performance. Its primary use case is
-data science and machine learning experiments.</p><video width=100% controls onloadedmetadata="this.playbackRate=1.5">
+data science and machine learning experiments.</p><video width=100% controls>
 <source src=../../videos/tldr.mp4 type=video/mp4><source src=../../videos/tldr.webm type=video/webm>Your browser does not support HTML5 video.</video><h2 id=introduction>Introduction<a hidden class=anchor aria-hidden=true href=#introduction>#</a></h2><p>They finally figured out how the Roman Empire <em>actually</em> fell, and it was
 this file: <code>model_param=0.1_best_VERSION2_preprocess=True_final_FIXED.pkl</code>. &mldr;OK,
 we all agree this filename&rsquo;s terrible - but why exactly? Its job is to tell the
@@ -88,7 +88,7 @@ ensembling, clustering, chunking, &mldr;) in the most straightforward way, while
 still having intermediate results cached (and even <a href=#pattern-matching-with-collections-the-color-refinement-projection>declaratively
 queriable</a>). The video below shows this in action by
 incrementally evolving the workflow above with new logic and parameters:</p><p><details open><summary markdown=span>Show/hide video</summary>
-<video width=100% controls onloadedmetadata="this.playbackRate=1.5">
+<video width=100% controls>
 <source src=../../videos/mem.mp4 type=video/mp4><source src=../../videos/mem.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The video above illustrates</p><ul><li><strong>memoization as imperative query interface</strong>: you can get to any of the
 computed quantities just by retracing the memoized code, or parts of it, again.</li><li><strong>laziness</strong>: when run against a persistent storage, <code>mandala</code> only reads from
 disk when a value is needed for a new computation</li><li><strong>control flow</strong>: laziness is designed to do the least work compatible with
@@ -103,7 +103,7 @@ abstracting them as a single (parametrized) memoized function. After all, <stron
 time there is a large number of calls happening, they share some repetitive
 structure that can be abstracted away</strong>. This way you can take &ldquo;shortcuts&rdquo; in the
 memoization graph:</p><p><details open><summary markdown=span>Show/hide video</summary>
-<video width=100% controls onloadedmetadata="this.playbackRate=1.5">
+<video width=100% controls>
 <source src=../../videos/sup.mp4 type=video/mp4><source src=../../videos/sup.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><p>The <code>@superop</code> decorator you see in the video is needed to indicate that a
 memoized function is itself a composition of memoized functions. A few of the
 nice things enabled by this:</p><ul><li><strong>shortcutting via memoization</strong>: the first time when you run the refactored
@@ -226,7 +226,7 @@ the default value applied retroactively to past calls. All the memoized calls
 without the new argument are still memoized. When doing this with a versioned
 storage, you&rsquo;ll be shown a diff and should mark the change as <strong>not</strong> requiring
 recomputation of dependents:</p><p><details open><summary markdown=span>Show/hide video</summary>
-<video width=100% controls onloadedmetadata="this.playbackRate=1.5">
+<video width=100% controls>
 <source src=../../videos/add_arg.mp4 type=video/mp4><source src=../../videos/add_arg.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><h3 id=marking-changes-as-breaking-and-traveling-back-in-time>Marking changes as breaking and traveling back in time<a hidden class=anchor aria-hidden=true href=#marking-changes-as-breaking-and-traveling-back-in-time>#</a></h3><p>When you discover a bug affecting results, or just want to change how a function
 works and recompute everything that depends on it, you mark the change as
 requiring recomputation in the diff dialog. This will essentially tell the
@@ -237,7 +237,7 @@ meaning in both computation and queries. You can examine the &ldquo;shallow&rdqu
 of a dependency (i.e. the revisions of its own source code) with
 <code>storage.sources(f)</code>, and the &ldquo;deep&rdquo; versions (which include sets of
 dependencies as seen by calls to this function) with <code>storage.versions(f)</code>:</p><p><details open><summary markdown=span>Show/hide video</summary>
-<video width=100% controls onloadedmetadata="this.playbackRate=1.5">
+<video width=100% controls>
 <source src=../../videos/versioning.mp4 type=video/mp4><source src=../../videos/versioning.webm type=video/webm>Your browser does not support HTML5 video.</video></details></p><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>This was a rather brisk walk through <code>mandala</code>, but it hopefully gave you an
 idea of its general spirit and the particular ways in which it simplifies
 computational data management. Some features that were not mentioned here, but
