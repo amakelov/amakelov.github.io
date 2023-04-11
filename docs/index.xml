@@ -11,12 +11,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://amakelov.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mandala: turning Python function calls into persistent, structured data</title>
+      <title>Mandala: Python programs that save, query and version themselves</title>
       <link>https://amakelov.github.io/blog/pl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://amakelov.github.io/blog/pl/</guid>
-      <description>Introduction They finally figured out how the Roman Empire actually fell, and it was this file: model_alpha=0.1_best_VERSION2_preprocess=True_final_FIXED.pkl. &amp;hellip;OK, we all agree this filename&amp;rsquo;s terrible - but why exactly? Its job is to tell the story of a computation. However, computations are more expressive, structured, and malleable than filenames. So, it&amp;rsquo;s no wonder you run into awkwardness, confusion and bugs when you try to turn one into the other. This impedance mismatch is at the root of the computational data management problem.</description>
+      <description>tl;dr Your code and its execution traces contain enough information to save, query and version computations without extra boilerplate. mandala is a persistent memoization cache on steroids that lets you tap into this information. It
+turns Python programs - composed of function calls, collections and control flow - into interlinked, persistent data as they execute. can be queried by directly pattern-matching against such programs, returning tables of values in the cache satisfying the computational relationships of the program tracks the dependencies of each memoized function call, automatically detecting when a change in the code may require recomputation.</description>
     </item>
     
   </channel>

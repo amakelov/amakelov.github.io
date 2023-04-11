@@ -1,4 +1,4 @@
-/* align text in the body left */
-body {
-    text-align: left;
+.medium-width-svg {
+  width: 50%;
+  height: auto;
 }

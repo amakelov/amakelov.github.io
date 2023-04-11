@@ -15,10 +15,14 @@ easier, and their code simpler and more maintainable. As part of this, I'm
 currently working on [mandala](https://github.com/amakelov/mandala), a Python
 library to simplify scientific data management.
 
-[CV](cv.pdf)
+[CV](cv.pdf) | [Google Scholar](https://scholar.google.com/citations?user=haO4sKoAAAAJ&hl=en&oi=ao)
 
 
 ## Publications
+
+[Backdoor or Feature? A New Perspective on Data Poisoning](https://openreview.net/pdf?id=4NT3umNU3D0) \
+*A. Khaddaj, G. Leclerc, A. Makelov, K. Georgiev, A. Ilyas, H. Salman, A. Mądry*
+
 [Towards Deep Learning Models Resistant to Adversarial
 Attacks](https://arxiv.org/abs/1706.06083) \
 *A. Mądry, A. Makelov, L. Schmidt, D. Tsipras, A. Vladu.* \
@@ -32,4 +36,4 @@ Undergraduate Thesis, Harvard College 2015
 
 ## Blog
 
-[Mandala: turning Python function calls into persistent, structured data (draft)](blog/pl/)
+[Mandala: Python programs that save, query and version themselves](blog/pl/)
