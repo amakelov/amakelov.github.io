@@ -1,4 +1,293 @@
+/* Minimal personal website stylesheet */
+
+:root {
+  --bg: #fff;
+  --text: #222;
+  --text-secondary: #555;
+  --link: #0066cc;
+  --link-hover: #004499;
+  --code-bg: #f5f5f5;
+  --border: #ddd;
+  --max-width: 720px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --text: #e0e0e0;
+    --text-secondary: #aaa;
+    --link: #6db3f2;
+    --link-hover: #9dcfff;
+    --code-bg: #2d2d2d;
+    --border: #444;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; }
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+  margin-bottom: 2rem;
+}
+
+nav a {
+  margin-right: 1rem;
+}
+
+/* Code blocks */
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+code {
+  font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  background: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* Images and videos */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
 .medium-width-svg {
   width: 50%;
   height: auto;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--border);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Details/summary (collapsible sections) */
+details {
+  margin: 1rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Publication list styling */
+.publications p {
+  margin: 1.5rem 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Blog post meta */
+.post-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* Table of contents */
+.toc {
+  background: var(--code-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.toc ul {
+  margin: 0.5rem 0;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* Footnotes */
+.footnotes {
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* SVG graphs (for the blog posts) */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Chroma syntax highlighting (from Hugo blog posts) */
+.highlight {
+  background: var(--code-bg);
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.chroma { background: var(--code-bg); }
+.chroma .line { display: flex; }
+.chroma .cl { flex: 1; }
+
+/* Light mode syntax colors */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr { color: #008000; font-weight: bold; } /* Keywords */
+.chroma .n { color: #333; } /* Names */
+.chroma .na { color: #008080; } /* Name attribute */
+.chroma .nb { color: #0086b3; } /* Builtin */
+.chroma .nc { color: #458; font-weight: bold; } /* Name class */
+.chroma .nd { color: #aa22ff; } /* Decorator */
+.chroma .nf,
+.chroma .fm { color: #900; } /* Function names */
+.chroma .nn { color: #555; } /* Namespace */
+.chroma .nv,
+.chroma .vm { color: #008080; } /* Variables */
+.chroma .o,
+.chroma .ow { color: #666; } /* Operators */
+.chroma .p { color: #333; } /* Punctuation */
+.chroma .s,
+.chroma .s1,
+.chroma .s2,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .sd,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .ss { color: #d14; } /* Strings */
+.chroma .m,
+.chroma .mi,
+.chroma .mf,
+.chroma .mh,
+.chroma .mo { color: #099; } /* Numbers */
+.chroma .c,
+.chroma .c1,
+.chroma .cm,
+.chroma .cp,
+.chroma .cs { color: #998; font-style: italic; } /* Comments */
+.chroma .bp { color: #999; } /* Builtin pseudo */
+
+/* Dark mode syntax colors */
+@media (prefers-color-scheme: dark) {
+  .chroma .k,
+  .chroma .kc,
+  .chroma .kd,
+  .chroma .kn,
+  .chroma .kp,
+  .chroma .kr { color: #66d9ef; }
+  .chroma .n { color: #f8f8f2; }
+  .chroma .na { color: #a6e22e; }
+  .chroma .nb { color: #f8f8f2; }
+  .chroma .nc { color: #a6e22e; }
+  .chroma .nd { color: #a6e22e; }
+  .chroma .nf,
+  .chroma .fm { color: #a6e22e; }
+  .chroma .nn { color: #f8f8f2; }
+  .chroma .nv,
+  .chroma .vm { color: #f8f8f2; }
+  .chroma .o,
+  .chroma .ow { color: #f92672; }
+  .chroma .p { color: #f8f8f2; }
+  .chroma .s,
+  .chroma .s1,
+  .chroma .s2,
+  .chroma .sa,
+  .chroma .sb,
+  .chroma .sc,
+  .chroma .sd,
+  .chroma .se,
+  .chroma .sh,
+  .chroma .si,
+  .chroma .sx,
+  .chroma .sr,
+  .chroma .ss { color: #e6db74; }
+  .chroma .m,
+  .chroma .mi,
+  .chroma .mf,
+  .chroma .mh,
+  .chroma .mo { color: #ae81ff; }
+  .chroma .c,
+  .chroma .c1,
+  .chroma .cm,
+  .chroma .cp,
+  .chroma .cs { color: #75715e; }
+  .chroma .bp { color: #f8f8f2; }
 }
